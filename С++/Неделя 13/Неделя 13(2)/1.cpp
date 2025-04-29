@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() // это работает на сломаых костылях
+int main() // это работает на сломанных костылях
 {
 	setlocale(LC_ALL, "RU");
 
