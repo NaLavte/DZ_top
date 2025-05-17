@@ -6,37 +6,31 @@ int main()
 {
     setlocale(LC_ALL, "RU");
 
-    int MTS = 3;
-    int Tele1 = 4;
-    int beelini = 2;
-    int conversationDuration;
-    int fromWhichOperator;
-    int toWhichOperator;
-   
-    cout << "Напишите цифру оператора с какого вы звоните - \n1. MTS,\n2. Tele1,\n3. Beelini.\n";
-    cin >> fromWhichOperator;
-    cout << endl;
+    char X;
+    int symbol;
 
-    cout << "Напишите цифру оператора на какой вы звоните - \n1. MTS,\n2. Tele1,\n3. Beelini.\n";
-    cin >> toWhichOperator;
-    cout << endl;
+    cout << "Введите символ который хотите распознать: ";
+    cin >> X;
 
-    cout << "Введите продолжительность разговора в минутах: ";
-    cin >> toWhichOperator;
-    cout << endl;
+    symbol = (int)X;
 
-    if (fromWhichOperator == toWhichOperator) {
-        cout << "Стоимость звонка равна: 0";
+    if(((symbol >= 65) && (symbol <= 90)) ||
+        ((symbol >= 97) && (symbol <= 122)))
+    {
+        cout << "Это буква.";
     }
-    else if (fromWhichOperator == 1) {
-        cout << "Стоимость звонка равна: " << toWhichOperator * MTS;
+    else if ((symbol >= 48) && (symbol <= 57))
+    {
+        cout << "Это цифра.";
     }
-    else if (fromWhichOperator == 2) {
-        cout << "Стоимость звонка равна: " << toWhichOperator * Tele1;
+    else if ((symbol == 33) || ((symbol >= 44) &&
+        (symbol <= 46)) || (symbol == 58) ||
+        (symbol == 59) || (symbol == 63))
+        {
+            cout << "Это знак препинания.";
     }
-    else if (fromWhichOperator == 3) {
-        cout << "Стоимость звонка равна: " << toWhichOperator * beelini;
+    else
+    {
+        cout << "Неизвестный символ";
     }
-
-    cout << endl;
 }
