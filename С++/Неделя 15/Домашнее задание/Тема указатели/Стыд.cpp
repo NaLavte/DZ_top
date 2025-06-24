@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Функции для поиска максимума, минимума и среднего
 int findMax(const int* arr, int size) {
     int maxVal = arr[0];
     for (int i = 1; i < size; ++i) {
@@ -31,14 +30,10 @@ double findAvg(const int* arr, int size) {
     return sum / size;
 }
 
-// Тип для указателя на функцию
 typedef double (*FuncPtr)(const int*, int);
 
-// Функция Action
 double Action(const int* A, const int* B, int sizeA, int sizeB, FuncPtr func) {
-    // Объединение двух массивов для вычислений vector<int> combined(A, A + sizeA);
     combined.insert(combined.end(), B, B + sizeB);
-    // В зависимости от выбранной функции, возвращаем результат
     return func(combined.data(), combined.size());
 }
 
@@ -72,7 +67,6 @@ int main() {
 
     switch (choice) {
         case 1:
-            // Для max возвращается double, нужно обрабатывать отдельно
             {
                 auto maxFunc = [](const int* arr, int size) -> double {
                     return findMax(arr, size);
