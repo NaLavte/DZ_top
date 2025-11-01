@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+class Circle {
+private:
+    double radius;
+    double PI = 3.14;
+
+public:
+    Circle(double r) : radius(r) {}
+    double area() const {
+        return PI * radius * radius;
+    }
+
+    double circumference() const {
+        return 2 * PI * radius;
+    }
+};
+
+int main()
+{
+    Circle c(5);
+    cout << c.area() << endl;
+    cout << c.circumference() << endl;
+}

@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+// 6. Класс Triangle с определением длины сторон и типа
+
+// Напишите программу на C++ для создания класса Triangle,
+// который имеет частные переменные - члены для определения длины трех его сторон.
+// Реализуйте функции - члены, чтобы определить, является ли треугольник равносторонним, 
+// равнобедренным или наклонным.
+
+class Triangle {
+private:
+	double side1;
+	double side2;
+	double side3;
+
+public:
+	Triangle(double s1, double s2, double s3);
+	string defineType() {
+		if (side1 == side2 && side2 == side3) {
+			return "equilateral";
+		}
+		if (side1 == side2 && side1 == side3 || side2 == side3) {
+			return "isosceles";
+		}
+		return "versatile";
+	}
+};
+
+int main()
+{
+	Triangle t(1, 2, 3);
+}
